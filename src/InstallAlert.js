@@ -398,6 +398,8 @@ const InstallAlert = () => {
                 )}
               </div>
             </div>
+
+            <p className="text-gray-400 text-xs">OR</p>
             
             {/* Action Buttons */}
             <div className="space-y-3">

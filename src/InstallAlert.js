@@ -29,7 +29,7 @@ useEffect(() => {
   if (isMobile && !isStandalone && !isInWebAppiOS) {
     setTimeout(() => {
       setShowAlert(true);
-    }, 3000); // show after 3 sec
+    }, 1000); // show after 3 sec
   }
 }, []);
 

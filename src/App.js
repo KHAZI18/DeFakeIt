@@ -677,13 +677,12 @@ const DeepfakeDetector = () => {
                 Instant detection capabilities for live video streams and uploaded content with minimal latency.
               </p>
             </div>
-
-         {/* Made with love section */}
+          </div>
+          {/* Made with love section */}
           <div className="mt-16 flex justify-center">
             <p className="text-lg font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent text-center">
               Made with ❤ by Khazi18
             </p>
-          </div>
           </div>
         </div>        
 </main>
@@ -692,3 +691,4 @@ const DeepfakeDetector = () => {
 };
 
 export default DeepfakeDetector;
+

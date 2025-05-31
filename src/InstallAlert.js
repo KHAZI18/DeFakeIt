@@ -97,7 +97,7 @@ const handleClose = () => {
           </button> */}
           
           {/* App Icon */}
-          <div className="text-center mb-6">
+          {/* <div className="text-center mb-6">
             <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 animate-bounce" style={{animationDuration: '2s'}}>
               <i className="fas fa-brain text-3xl text-white"></i>
             </div>
@@ -107,7 +107,7 @@ const handleClose = () => {
             <p className="text-gray-400 text-sm mt-1">
               Get instant access to AI deepfake detection
             </p>
-          </div>
+          </div> */}
           
           {/* Installation Steps */}
           <div className="space-y-4 mb-8">

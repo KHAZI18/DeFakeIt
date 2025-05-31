@@ -22,26 +22,36 @@ const InstallAlert = () => {
 //   }, []);
 useEffect(() => {
   const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
-  const hasSeenInstallPrompt = localStorage.getItem('defakeit-install-dismissed');
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
   const isInWebAppiOS = window.navigator.standalone === true;
 
-  if (isMobile && !hasSeenInstallPrompt && !isStandalone && !isInWebAppiOS) {
+  // Only show if mobile and not installed
+  if (isMobile && !isStandalone && !isInWebAppiOS) {
     setTimeout(() => {
       setShowAlert(true);
-    }, 3000);
+    }, 3000); // show after 3 sec
   }
 }, []);
 
 
-  // Handle closing the alert
-  const handleClose = () => {
-    setIsClosing(true);
-    setTimeout(() => {
-      setShowAlert(false);
-      localStorage.setItem('defakeit-install-dismissed', 'true');
-    }, 300);
-  };
+
+//   // Handle closing the alert
+//   const handleClose = () => {
+//     setIsClosing(true);
+//     setTimeout(() => {
+//       setShowAlert(false);
+//       localStorage.setItem('defakeit-install-dismissed', 'true');
+//     }, 300);
+//   };
+const handleClose = () => {
+  setIsClosing(true);
+  setTimeout(() => {
+    setShowAlert(false);
+    // No longer store 'dismissed' flag
+    // localStorage.setItem('defakeit-install-dismissed', 'true');
+  }, 300);
+};
+
 
   // Handle "Install Now" button click
   const handleInstallClick = () => {

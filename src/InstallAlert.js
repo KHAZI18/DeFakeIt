@@ -285,22 +285,10 @@ const InstallAlert = () => {
             <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl animate-pulse"></div>
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
             
-            {/* App Icon
+            {/* App Icon */}
             <div className="text-center mb-6">
               <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 animate-bounce" style={{animationDuration: '2s'}}>
                 <i className="fas fa-brain text-3xl text-white"></i>
-              </div>
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                Install DeFakeIt
-              </h3>
-              <p className="text-gray-400 text-sm mt-1">
-                Get instant access to AI deepfake detection
-              </p>
-            </div> */}
-             {/* App Icon */}
-            <div className="text-center mb-6">
-              <div className="w-32 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 animate-bounce px-2" style={{animationDuration: '2s'}}>
-                <span className="text-white font-bold text-base text-center">DeFakeIt</span>
               </div>
               <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Install DeFakeIt

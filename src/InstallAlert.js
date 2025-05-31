@@ -89,12 +89,12 @@ const handleClose = () => {
           <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl animate-pulse" style={{animationDelay: '1s'}}></div>
           
           {/* Close Button */}
-          <button 
+          {/* <button 
             onClick={handleClose}
             className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200"
           >
             <i className="fas fa-times text-sm"></i>
-          </button>
+          </button> */}
           
           {/* App Icon */}
           <div className="text-center mb-6">

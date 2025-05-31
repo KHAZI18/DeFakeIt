@@ -4,34 +4,46 @@ const InstallAlert = () => {
   // State to control alert visibility
   const [showAlert, setShowAlert] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+
 
   // Check if app should show install prompt
-//   useEffect(() => {
-//     // Check if user has already dismissed the alert or installed the app
-//     const hasSeenInstallPrompt = localStorage.getItem('defakeit-install-dismissed');
-//     const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
-//     const isInWebAppiOS = window.navigator.standalone === true;
-    
-//     // Show alert if user hasn't seen it and app isn't installed
-//     if (!hasSeenInstallPrompt && !isStandalone && !isInWebAppiOS) {
-//       // Delay showing the alert for better UX
-//       setTimeout(() => {
-//         setShowAlert(true);
-//       }, 3000); // Show after 3 seconds
-//     }
-//   }, []);
+
+// useEffect(() => {
+//   const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+//   const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+//   const isInWebAppiOS = window.navigator.standalone === true;
+
+//   // Only show if mobile and not installed
+//   if (isMobile && !isStandalone && !isInWebAppiOS) {
+//     setTimeout(() => {
+//       setShowAlert(true);
+//     }, 1000); // show after 3 sec
+//   }
+// }, []);
 useEffect(() => {
   const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
   const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
   const isInWebAppiOS = window.navigator.standalone === true;
 
-  // Only show if mobile and not installed
+  const handleBeforeInstallPrompt = (e) => {
+    e.preventDefault(); // Prevent default mini-infobar
+    setDeferredPrompt(e);
+  };
+
+  window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+
   if (isMobile && !isStandalone && !isInWebAppiOS) {
     setTimeout(() => {
       setShowAlert(true);
-    }, 1000); // show after 3 sec
+    }, 1000);
   }
+
+  return () => {
+    window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+  };
 }, []);
+
 
 
 
@@ -54,16 +66,30 @@ const handleClose = () => {
 
 
   // Handle "Install Now" button click
-  const handleInstallClick = () => {
-    // Close the alert
-    handleClose();
+//   const handleInstallClick = () => {
+//     // Close the alert
+//     handleClose();
     
-    // Show browser-specific instructions or trigger PWA install
-    if ('serviceWorker' in navigator) {
-      // Additional PWA logic can be added here
-      console.log('Install prompt triggered for DeFakeIt');
+//     // Show browser-specific instructions or trigger PWA install
+//     if ('serviceWorker' in navigator) {
+//       // Additional PWA logic can be added here
+//       console.log('Install prompt triggered for DeFakeIt');
+//     }
+//   };
+const handleInstallClick = async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const choiceResult = await deferredPrompt.userChoice;
+    if (choiceResult.outcome === 'accepted') {
+      console.log('User accepted the install prompt');
+    } else {
+      console.log('User dismissed the install prompt');
     }
-  };
+    setDeferredPrompt(null); // Clear the prompt
+  }
+  handleClose(); // Close the modal anyway
+};
+
 
   // Don't render if alert shouldn't be shown
   if (!showAlert) return null;

@@ -559,11 +559,12 @@ const InstallAlert = () => {
             {/* Installation Steps */}
             <div className="space-y-4 mb-6">
               <div className="text-center mb-6">
-                <p className="text-white font-semibold mb-4">
+                {/* <p className="text-white font-semibold mb-4">
                   Install DeFakeIt for the best experience!
-                </p>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  Add our app to your home screen for quick access and offline capabilities.
+                </p> */}
+                {/* <p className="text-gray-300 text-sm leading-relaxed"> */}
+                <p className="text-white font-semibold mb-4">
+                  Add our app to your home screen for quick access and best experience!
                 </p>
               </div>
               

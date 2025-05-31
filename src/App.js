@@ -678,26 +678,14 @@ const DeepfakeDetector = () => {
               </p>
             </div>
 
-            <p className="text-lg font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent text-center">
+          {/* Made with love section */}
+            <div className="mt-16 text-center">
+              <p className="text-lg font-semibold bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
                 Made with ❤ by Khazi18
               </p>
-          </div>
-        </div>
-        {/* Footer */}
-        {/* <footer className="relative z-10 mt-24 border-t border-white/10 bg-black/20 backdrop-blur-xl">
-          <div className="max-w-7xl mx-auto px-6 py-12">
-            <div className="text-center">
-              <p className="text-gray-400 mb-4">© 2025 AI Deepfake Detector. Powered by advanced neural networks.</p>
-              <div className="flex justify-center space-x-6 text-sm text-gray-400">
-                <a href="#" className="hover:text-white transition-colors duration-300">Privacy Policy</a>
-                <a href="#" className="hover:text-white transition-colors duration-300">Terms of Service</a>
-                <a href="#" className="hover:text-white transition-colors duration-300">Contact</a>
-              </div>
             </div>
           </div>
-        </footer> */}
-        {/* Footer */}
-        
+        </div>        
 </main>
 </div>
 );

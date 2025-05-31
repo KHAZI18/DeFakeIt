@@ -190,12 +190,12 @@ const handleClose = () => {
                 </div>
                 <p className="text-xs text-gray-400">Faster Access</p>
               </div>
-              <div>
+              {/* <div>
                 <div className="text-blue-400 text-lg mb-1">
                   <i className="fas fa-wifi"></i>
                 </div>
                 <p className="text-xs text-gray-400">Works Offline</p>
-              </div>
+              </div> */}
               <div>
                 <div className="text-purple-400 text-lg mb-1">
                   <i className="fas fa-mobile-alt"></i>

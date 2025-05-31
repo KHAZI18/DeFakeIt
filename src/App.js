@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
+// import InstallAlert from './InstallAlert';
+import InstallAlert from './InstallAlert';
 
 const DeepfakeDetector = () => {
   // State management
@@ -408,6 +409,7 @@ const DeepfakeDetector = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
+      <InstallAlert />
       {/* Animated Background */}
       <div className="fixed inset-0 opacity-30">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 animate-pulse bg-[length:400%_400%]"></div>

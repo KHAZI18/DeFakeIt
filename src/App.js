@@ -447,7 +447,7 @@ const DeepfakeDetector = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
               <i className="fas fa-shield-alt text-green-400"></i>
-              <span className="text-sm">96.2% Accuracy</span>
+              <span className="text-sm">98.2% Accuracy</span>
             </div>
             <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
               <i className="fas fa-bolt text-yellow-400"></i>
